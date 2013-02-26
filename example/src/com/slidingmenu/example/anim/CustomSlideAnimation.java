@@ -4,7 +4,6 @@ import android.graphics.Canvas;
 import android.view.animation.Interpolator;
 
 import com.slidingmenu.example.R;
-import com.slidingmenu.example.R.string;
 import com.slidingmenu.lib.SlidingMenu.CanvasTransformer;
 
 public class CustomSlideAnimation extends CustomAnimation {

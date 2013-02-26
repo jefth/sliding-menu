@@ -3,7 +3,6 @@ package com.slidingmenu.example.anim;
 import android.graphics.Canvas;
 
 import com.slidingmenu.example.R;
-import com.slidingmenu.example.R.string;
 import com.slidingmenu.lib.SlidingMenu.CanvasTransformer;
 
 public class CustomZoomAnimation extends CustomAnimation {
