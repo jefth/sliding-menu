@@ -22,6 +22,7 @@ import com.slidingmenu.example.fragments.ResponsiveUIActivity;
 
 public class ExampleListActivity extends SherlockPreferenceActivity {
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -83,6 +84,7 @@ public class ExampleListActivity extends SherlockPreferenceActivity {
 			break;
 		case R.id.contact:
 			final Intent email = new Intent(android.content.Intent.ACTION_SENDTO);
+			@SuppressWarnings("deprecation")
 			String uriText = "mailto:jfeinstein10@gmail.com" +
 					"?subject=" + URLEncoder.encode("SlidingMenu Demos Feedback"); 
 			email.setData(Uri.parse(uriText));
