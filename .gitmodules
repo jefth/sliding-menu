@@ -1,0 +1,4 @@
+
+[submodule "libs/actionbar-sherlock"]
+        path = libs/actionbar-sherlock
+        url = https://github.com/chenyoca/action-bar-sherlock.git
