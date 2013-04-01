@@ -27,6 +27,8 @@ public abstract class SlidingMenuActivity extends SlidingFragmentActivity {
 		setBehindContentView(sidebarLeftView);
 		if (sidebarRightView != null){
 			slidingMenu.setSecondaryMenu(sidebarRightView);
+		}else{
+			slidingMenu.setMode(SlidingMenu.LEFT);
 		}
 	}
 	
@@ -40,6 +42,8 @@ public abstract class SlidingMenuActivity extends SlidingFragmentActivity {
 	public abstract View onCreateLeftView();
 	
 	// create Right side view
-	public abstract View onCreateRightView();
+	public View onCreateRightView(){
+		return null;
+	}
 
 }
