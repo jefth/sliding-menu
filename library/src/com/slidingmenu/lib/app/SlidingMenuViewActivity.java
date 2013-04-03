@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.slidingmenu.lib.SlidingMenu;
 
-public abstract class SlidingMenuActivity extends SlidingFragmentActivity {
+public abstract class SlidingMenuViewActivity extends SlidingFragmentActivity {
 
 	protected SlidingMenu slidingMenu;
 	protected View contentView;

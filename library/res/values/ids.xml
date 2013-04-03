@@ -2,4 +2,8 @@
 <resources>
     <item name="selected_view" type="id"/>
     
+    <item name="slidingmenu_lib_left_view" type="id"/>
+    <item name="slidingmenu_lib_right_view" type="id"/>
+    <item name="slidingmenu_lib_content_view" type="id"/>
+    
 </resources>
