@@ -53,6 +53,16 @@ public abstract class SlidingMenuFragmentActivity extends SlidingFragmentActivit
 		
 		transaction.commit();
 	}
+
+    /**
+     * 替换内容区的Fragment
+     * @param fragment 新的Fragment
+     */
+    public void replaceContentFragment(Fragment fragment){
+        FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.slidingmenu_lib_content_view, fragment);
+        transaction.commit();
+    }
 	
 	
 	/**
