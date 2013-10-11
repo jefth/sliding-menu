@@ -12,8 +12,8 @@ public abstract class SlidingMenuFragmentActivity extends SlidingFragmentActivit
 
 	protected SlidingMenu slidingMenu;
 	protected Fragment contentFragment;
-	protected Fragment sidebarLeftFragment;
-	protected Fragment sidebarRightFragment;
+	protected Fragment leftFragment;
+	protected Fragment rightFragment;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -34,17 +34,17 @@ public abstract class SlidingMenuFragmentActivity extends SlidingFragmentActivit
 		
 		FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
 		
-		Fragment contentFragment = onCreateContentFragment();
+		contentFragment = onCreateContentFragment();
 		transaction.replace(R.id.slidingmenu_lib_content_view, contentFragment);
 		
-		Fragment leftFragment = onCreateLeftFragment();
+		leftFragment = onCreateLeftFragment();
 		if(leftFragment != null){
 			transaction.replace(R.id.slidingmenu_lib_left_view, leftFragment);
 		}else{
 			slidingMenu.setMode(SlidingMenu.RIGHT);
 		}
 		
-		Fragment rightFragment = onCreateRightFragment();
+		rightFragment = onCreateRightFragment();
 		if(rightFragment != null){
 			transaction.replace(R.id.slidingmenu_lib_right_view, rightFragment);
 		}else{
