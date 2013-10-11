@@ -14,21 +14,23 @@ public abstract class SlidingMenuFragmentActivity extends SlidingFragmentActivit
 	protected Fragment contentFragment;
 	protected Fragment leftFragment;
 	protected Fragment rightFragment;
+
+    protected FrameLayout backgroundLayout;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		slidingMenu = getSlidingMenu();
 		onConfigSlidingMenu(slidingMenu);
-		
-		FrameLayout contentView = new FrameLayout(this);
-		contentView.setId(R.id.slidingmenu_lib_content_view);
+
+        backgroundLayout = new FrameLayout(this);
+        backgroundLayout.setId(R.id.slidingmenu_lib_content_view);
 		FrameLayout leftView = new FrameLayout(this);
 		leftView.setId(R.id.slidingmenu_lib_left_view);
 		FrameLayout rightView = new FrameLayout(this);
 		rightView.setId(R.id.slidingmenu_lib_right_view);
 		
-		setContentView(contentView);
+		setContentView(backgroundLayout);
 		setBehindContentView(leftView);
 		slidingMenu.setSecondaryMenu(rightView);
 		
