@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.FrameLayout;
-
 import com.slidingmenu.lib.R;
 import com.slidingmenu.lib.SlidingMenu;
 
@@ -63,6 +62,16 @@ public abstract class SlidingMenuFragmentActivity extends SlidingFragmentActivit
     public void replaceContentFragment(Fragment fragment){
         FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.slidingmenu_lib_content_view, fragment);
+        transaction.commit();
+    }
+
+    /**
+     * 显示内容区Fragment
+     * @param fragment 已经添加的Fragment
+     */
+    public void showContentFragment(Fragment fragment){
+        FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
+        transaction.show(fragment);
         transaction.commit();
     }
 	
