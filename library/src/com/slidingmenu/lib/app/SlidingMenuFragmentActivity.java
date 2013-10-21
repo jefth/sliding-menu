@@ -63,7 +63,16 @@ public abstract class SlidingMenuFragmentActivity extends SlidingFragmentActivit
         transaction.replace(R.id.slidingmenu_lib_content_view, fragment);
         transaction.commit();
     }
-	
+
+    /**
+     * 显示内容区已经存在的Fragment
+     * @param fragment Fragment
+     */
+    public void showContentFragment(Fragment fragment){
+        FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
+        transaction.show(fragment);
+        transaction.commit();
+    }
 	
 	/**
 	 * configuration of sliding menu
