@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.FrameLayout;
-
 import com.slidingmenu.lib.R;
 import com.slidingmenu.lib.SlidingMenu;
 
@@ -14,21 +13,23 @@ public abstract class SlidingMenuFragmentActivity extends SlidingFragmentActivit
 	protected Fragment contentFragment;
 	protected Fragment leftFragment;
 	protected Fragment rightFragment;
+
+    protected FrameLayout backgroundLayout;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		slidingMenu = getSlidingMenu();
 		onConfigSlidingMenu(slidingMenu);
-		
-		FrameLayout contentView = new FrameLayout(this);
-		contentView.setId(R.id.slidingmenu_lib_content_view);
+
+        backgroundLayout = new FrameLayout(this);
+        backgroundLayout.setId(R.id.slidingmenu_lib_content_view);
 		FrameLayout leftView = new FrameLayout(this);
 		leftView.setId(R.id.slidingmenu_lib_left_view);
 		FrameLayout rightView = new FrameLayout(this);
 		rightView.setId(R.id.slidingmenu_lib_right_view);
 		
-		setContentView(contentView);
+		setContentView(backgroundLayout);
 		setBehindContentView(leftView);
 		slidingMenu.setSecondaryMenu(rightView);
 		
@@ -65,15 +66,15 @@ public abstract class SlidingMenuFragmentActivity extends SlidingFragmentActivit
     }
 
     /**
-     * 显示内容区已经存在的Fragment
-     * @param fragment Fragment
+     * 显示内容区Fragment
+     * @param fragment 已经添加的Fragment
      */
     public void showContentFragment(Fragment fragment){
         FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
         transaction.show(fragment);
         transaction.commit();
     }
-	
+
 	/**
 	 * configuration of sliding menu
 	 * @param slidingMenu
